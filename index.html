@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <!-- Include Chart.js via CDN for visual data -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .dashboard {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .card {
+            flex: 1;
+            background: #eef2f3;
+            padding: 15px;
+            margin: 0 10px;
+            text-align: center;
+            border-radius: 6px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Expense Tracker</h1>
+    
+    <!-- Dashboard Overview -->
+    <div class="dashboard">
+        <div class="card">
+            <h3>Your Balance</h3>
+            <p id="balance">$0.00</p>
+        </div>
+        <div class="card">
+            <h3>Income</h3>
+            <p id="income" style="color: green;">$0.00</p>
+        </div>
+        <div class="card">
+            <h3>Expenses</h3>
+            <p id="expense" style="color: red;">$0.00</p>
+        </div>
+    </div>
+
+    <!-- Chart Visualization -->
+    <div style="max-width: 400px; margin: 0 auto 30px auto;">
+        <canvas id="expenseChart"></canvas>
+    </div>
+
+    <!-- Transaction Form -->
+    <h3>Add New Transaction</h3>
+    <form id="transaction-form">
+        <div class="form-group">
+            <label for="text">Description</label>
+            <input type="text" id="text" placeholder="e.g., Groceries, Salary" required>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount (negative for expense, positive for income)</label>
+            <input type="number" id="amount" placeholder="e.g., -50, 1500" required>
+        </div>
+        <button type="submit">Add Transaction</button>
+    </form>
+
+    <!-- History Log -->
+    <h3>History</h3>
+    <ul id="list" style="list-style-type: none; padding: 0;">
+        <!-- Dynamic items will go here -->
+    </ul>
+</div>
+
+<script>
+    // Your JavaScript logic for tracking and Chart.js integration goes here!
+</script>
+
+</body>
+</html>
